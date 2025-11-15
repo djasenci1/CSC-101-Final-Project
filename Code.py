@@ -1,2 +1,2 @@
 class Something:
-    print(12)
+    print(123)
