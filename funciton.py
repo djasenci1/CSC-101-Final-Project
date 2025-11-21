@@ -11,7 +11,7 @@ def phone_charging_time(dict_phone: dict[str, float], phone_key:str) -> list[flo
     for x in dict_phone:
         new1.append(dict_phone[x])
     if new1 < main.Person[phone_key]: #This is the five row on the Person Object calling the total_phone_charging_time in the test_file
-        total = main.Person["iphone"]
+        total = main.Person[phone_key]
         total_1 = (new1 / total) * 100  # This gets the percentage
         print("Person uses less electricity consumption on phone by", new1)
     else:
