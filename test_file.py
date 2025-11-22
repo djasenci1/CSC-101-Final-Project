@@ -1,191 +1,236 @@
 import unittest
+import function
 import main
+from function import all_wattage, total_wattage_used
+
 surveyed_data=[
-   main.Person(
-       {"Adam":18},
-       {"Iphone 15":13.6},
-       {"Omen Gaming Laptop": 300},
-       {"No Ipad":0},
-       {"No Airpods":0},
-       30,
-       30,
-       0,
-       0,
-       3,
-       3,
-       0,
-       0),
-   main.Person(
-       {"Jack": 17},
-       {"Iphone 13 ": 12.41},
-       {"Macbook Pro": 69.6},
-       {"No Ipad": 0},
-       {"No Airpods": 1.52},
-       60,
-       90,
-       40,
-       0,
-       3,
-       4,
-       0,
-       3),
-   main.Person(
-       {"Ramses": 18},
-       {"Iphone 17": 13.66},
-       {"Omen Gaming Laptop": 300},
-       {"Ipad Pro":31.29 },
-       {"No Airpods": 0},
-       30,
-       30,
-       18,
-       0,
-       3,
-       3,
-       1,
-       0),
-   main.Person(
-       {"Bella": 22},
-       {"iPhone 13": 12.41},
-       {"Acer Nitro 5": 250},
-       {"iPad Pro 11": 31.29},
-       {"AirPods Pro 2": 0.18},
-       28,
-       27,
-       1,
-       0,
-       2,
-       4,
-       0,
-       1),
+    main.Person(
+        {"Adam": 18},
+        13.6,
+        300,
+        0,
+        0,
+        11,
+        12,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0
+    ),
 
+    main.Person(
+        {"Jack": 17},
+        12.41,
+        69.6,
+        0,
+        1.52,
+        18,
+        27,
+        12,
+        0,
+        4,
+        2,
+        0,
+        1
+    ),
 
-   main.Person(
-       {"Chris": 25},
-       {"iPhone 17": 13.7},
-       {"MSI Raider": 650},
-       {"No Ipad": 0},
-       {"AirPods 3": 0.15},
-       35,
-       33,
-       0,
-       1,
-       3,
-       2,
-       0,
-       0),
+    main.Person(
+        {"Ramses": 18},
+        13.66,
+        300,
+        31.29,
+        0,
+        30,
+        30,
+        18,
+        0,
+        20,
+        6,
+        20,
+        0
+    ),
 
+    main.Person(
+        {"Bella": 19},
+        12.41,
+        250,
+        31.29,
+        0.18,
+        32,
+        31,
+        1,
+        0,
+        25,
+        8,
+        0,
+        1
+    ),
 
-   main.Person(
-       {"Diana": 19},
-       {"iPhone 12": 10.78},
-       {"ROG Strix G16": 400},
-       {"iPad 9th Gen": 32.4},
-       {"No Airpods": 0},
-       26,
-       24,
-       0,
-       0,
-       1,
-       2,
-       0,
-       0),
+    main.Person(
+        {"Chris": 17},
+        13.7,
+        650,
+        0,
+        0.15,
+        16,
+        15,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+    ),
 
+    main.Person(
+        {"Diana": 19},
+        10.78,
+        400,
+        32.4,
+        0,
+        10,
+        9,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+    ),
 
-   main.Person(
-       {"Ethan": 30},
-       {"iPhone 14": 12.7},
-       {"HP Omen 16": 320},
-       {"iPad Mini": 19.3},
-       {"AirPods Pro": 0.18},
-       40,
-       38,
-       1,
-       1,
-       3,
-       5,
-       0,
-       0),
+    main.Person(
+        {"Ethan": 18},
+        12.7,
+        320,
+        19.3,
+        0.18,
+        27,
+        31,
+        1,
+        1,
+        10,
+        17,
+        0,
+        0
+    ),
 
+    main.Person(
+        {"Fiona": 17},
+        7.1,
+        0,
+        0,
+        0.09,
+        24,
+        24,
+        0,
+        0,
+        6,
+        1,
+        0,
+        0
+    ),
 
-   main.Person(
-       {"Fiona": 21},
-       {"iPhone SE": 7.1},
-       {"No Gaming Laptop": 0},
-       {"No Ipad": 0},
-       {"AirPods": 0.09},
-       20,
-       19,
-       0,
-       0,
-       1,
-       1,
-       0,
-       0),
+    main.Person(
+        {"George": 19},
+        12.0,
+        450,
+        38.99,
+        0.18,
+        21,
+        22,
+        1,
+        0,
+        9,
+        5,
+        0,
+        0
+    ),
 
+    main.Person(
+        {"Hannah": 17},
+        11.9,
+        300,
+        28.9,
+        0,
+        15,
+        39,
+        0,
+        0,
+        2,
+        26,
+        0,
+        0
+    ),
 
-   main.Person(
-       {"George": 27},
-       {"iPhone 15 Pro": 12.0},
-       {"Lenovo Legion 5": 450},
-       {"iPad Pro 13": 38.99},
-       {"AirPods Pro 2": 0.18},
-       32,
-       34,
-       1,
-       0,
-       4,
-       3,
-       0,
-       0),
+    main.Person(
+        {"Ian": 18},
+        11.2,
+        500,
+        31.29,
+        0.09,
+        33,
+        38,
+        0,
+        1,
+        20,
+        16,
+        0,
+        0
+    ),
 
-
-   main.Person(
-       {"Hannah": 24},
-       {"iPhone 11": 11.9},
-       {"Asus TUF F15": 300},
-       {"iPad Air": 28.9},
-       {"No Airpods": 0},
-       25,
-       26,
-       0,
-       0,
-       2,
-       1,
-       0,
-       0),
-
-
-   main.Person(
-       {"Ian": 23},
-       {"iPhone XR": 11.2},
-       {"Razer Blade 15": 500},
-       {"iPad Pro 11": 31.29},
-       {"AirPods 2": 0.09},
-       27,
-       29,
-       0,
-       1,
-       2,
-       3,
-       0,
-       0),
-
-
-   main.Person(
-       {"Julia": 29},
-       {"iPhone 16": 13.0},
-       {"Dell G15": 350},
-       {"No Ipad": 0},
-       {"AirPods Pro": 0.18},
-       33,
-       35,
-       0,
-       0,
-       3,
-       4,
-       0,
-       0),
-
-
+    main.Person(
+        {"Julia": 19},
+        13.0,
+        350,
+        0,
+        0.18,
+        39,
+        41,
+        0,
+        0,
+        26,
+        7,
+        0,
+        0
+    )
 ]
+results={"Minimum":"This Person has used minimal amount of electricity which is good as it can save electricity bills","Medium":"This Person has used the medium amount of electricity, which is alright in saving electricity bills","High":"This Person has used high amount of electricity, which is not good in saving electricity bills"}
 
+class TestCases(unittest.TestCase):
+    def test_total_wattage_used(self):
+        result=function.total_wattage_used(surveyed_data)
+        expected=[64, 77, 1224, 1198, 166, 61, 2867, 17, 862, 5075, 5189, 1893]
+        self.assertEqual(expected,result)
+    def test_total_cost_in_a_year(self):
+        result=function.total_costs_in_a_year(all_wattage(total_wattage_used(surveyed_data)))
+        expected=2156
+        self.assertEqual(expected,result)
+    def testing_testing_results(self):
+        result=function.testing_results(total_wattage_used(surveyed_data),results)
+        expected=['This Person has used minimal amount of electricity which is good as it can '
+ 'save electricity bills',
+ 'This Person has used minimal amount of electricity which is good as it can '
+ 'save electricity bills',
+ 'This Person has used the medium amount of electricity, which is alright in '
+ 'saving electricity bills',
+ 'This Person has used the medium amount of electricity, which is alright in '
+ 'saving electricity bills',
+ 'This Person has used the medium amount of electricity, which is alright in '
+ 'saving electricity bills',
+ 'This Person has used minimal amount of electricity which is good as it can '
+ 'save electricity bills',
+ 'This Person has used high amount of electricity, which is not good in saving '
+ 'electricity bills',
+ 'This Person has used minimal amount of electricity which is good as it can '
+ 'save electricity bills',
+ 'This Person has used the medium amount of electricity, which is alright in '
+ 'saving electricity bills',
+ 'This Person has used high amount of electricity, which is not good in saving '
+ 'electricity bills',
+ 'This Person has used high amount of electricity, which is not good in saving '
+ 'electricity bills',
+ 'This Person has used high amount of electricity, which is not good in saving '
+ 'electricity bills']
+        self.assertEqual(expected,result)

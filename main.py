@@ -2,18 +2,18 @@ class Person:
 
    def __init__(self,
            name: dict[str, float],
-           phone: dict[str, float],
-           laptop: dict[str, float],
-           ipad: dict[str, float],
-           airpods: dict[str, float],
-           total_phone_charging_time: float,
-           total_laptop_charging_time: float,
-           total_ipad_charging_time: float,
-           total_airpods_charging_time: float,
-           total_phone_charging_frequency:float,
-           total_laptop_charging_frequency:float,
-           total_ipad_charging_frequency: float,
-           total_airpods_charging_frequency:float):
+           phone: float,
+           laptop: float,
+           ipad: float,
+           airpods: float,
+           average_phone_charging_time: float,
+           average_laptop_charging_time: float,
+           average_ipad_charging_time: float,
+           average_airpods_charging_time: float,
+           average_phone_charging_frequency:float,
+           average_laptop_charging_frequency:float,
+           average_ipad_charging_frequency: float,
+           average_airpods_charging_frequency:float):
 
        self.name = name
        self.phone = phone
@@ -21,16 +21,16 @@ class Person:
        self.ipad = ipad
        self.airpods = airpods
 
-       self.total_phone_charging_time = total_phone_charging_time
-       self.total_laptop_charging_time = total_laptop_charging_time
-       self.total_ipad_charging_time = total_ipad_charging_time
-       self.total_airpods_charging_time = total_airpods_charging_time
+       self.average_phone_charging_time = average_phone_charging_time
+       self.average_laptop_charging_time = average_laptop_charging_time
+       self.average_ipad_charging_time = average_ipad_charging_time
+       self.average_airpods_charging_time = average_airpods_charging_time
 
 
-       self.total_phone_charging_frequency = total_phone_charging_frequency
-       self.total_laptop_charging_frequency = total_laptop_charging_frequency
-       self.total_ipad_charging_frequency = total_ipad_charging_frequency
-       self.total_airpods_charging_frequency = total_airpods_charging_frequency
+       self.average_phone_charging_frequency = average_phone_charging_frequency
+       self.average_laptop_charging_frequency = average_laptop_charging_frequency
+       self.average_ipad_charging_frequency = average_ipad_charging_frequency
+       self.average_airpods_charging_frequency = average_airpods_charging_frequency
 
    def __repr__(self):
        return "name {}, phone {}, laptop {}, ipad {}, airpods {}".format(self.name, self.phone, self.laptop, self.ipad, self.airpods)
