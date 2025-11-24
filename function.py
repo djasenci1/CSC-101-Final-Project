@@ -16,13 +16,14 @@ def person1_phone_average_charging_per_day(list1, value):
             print("Person1 uses below average kilo watts per day")
     return new1
 
+#This converts the minutes to based on hour, i.e. 30 minutes is 0.5 hours since we are using hours to mearsure total voltage.
 def conversion_to_hour(number):
    conversion=number//60+number%60/60
    return conversion
 
 
 
-
+#This calculates the total wattage used per person, and will return a list of the total wattage values per person. i.e (1551,242,333,etc.)
 def total_wattage_used(list1):
    total_wattage=0
    wattage_list=[]
@@ -35,21 +36,21 @@ def total_wattage_used(list1):
        total_wattage=0
    return wattage_list
 
-
+#This calcuates the total amount of wattage used within the survyed data (adds up each person's total wattage)
 def all_wattage(list1):
    total_wattage_number=0
    for i in list1:
        total_wattage_number+=i
    return total_wattage_number
 
-
+#This converts the total amont of wattage used by everyone into money
 def total_costs_in_a_year(number):
    total_electricity_cost=int(number*0.000316*365)
    return total_electricity_cost
 
 
 
-
+#This shows if each person is using too much wattage
 def testing_results(list1, result_messages):
    the_result = []
    for i in list1:
@@ -60,7 +61,16 @@ def testing_results(list1, result_messages):
        else:
            the_result.append(result_messages["Minimum"])
    return the_result
-def verdict(list1):
+#This function identifies the individuals who are using High amounts of electricity
+def verdict(surveyed_data,total_wattaged_used):
+    verdict_list=[]
+    for i in range(len(total_wattaged_used)):
+        if total_wattaged_used[i]>1500:
+            verdict_list.append(surveyed_data[i].name)
+    return verdict_list
+
+#This function gives the final verdict, if over 50% of the people are using high amounts of electrcitiy, it will say, otherwise, it will say that most ofo the students are using normal amounts of electricity
+def final_verdict(list1):
    counter=0
    for i in list1:
        if i>1500:
@@ -70,14 +80,19 @@ def verdict(list1):
    else:
        the_verdict="Most of the students are not overusing their electricity"
    return the_verdict
+
+
 def summary(list1):
    total_wattage = total_wattage_used(list1)
    all_watts = all_wattage(total_wattage)
    total_cost = total_costs_in_a_year(all_watts)
-   verdict_result = verdict(total_wattage)
+   verdict_result = final_verdict(total_wattage)
+   verdict_list=verdict(list1, total_wattage)
 
 
-   return "Number of Calpoly Dormmates in Survey:", len(list1), "Total amount of electricity that they used:", all_watts, "total_cost_year",total_cost, "verdict", verdict_result
+   return ("Number of Calpoly Dormmates in Survey:", len(list1), "Total amount of electricity that they used:",
+           all_watts, "total_cost_year",total_cost, "Final Verdict=", verdict_result,
+           "However", verdict_list, "needs to cut down on their spending")
 
 
 
