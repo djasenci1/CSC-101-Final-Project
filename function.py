@@ -1,22 +1,19 @@
 import main
 import test_file
 
-# This function when given an electronic device from Person Object, returns the total_charging time per day
-# Input: dict[str. float]
-# Output: float
-# Ex Input: Person[iphone, 5] it takes 5 hours for this Person to charge their phones
-# Ex Output: Compares it to the total_charging_time of the device
 
-def phone_charging_time(dict_phone: dict[str, float], phone_key: str) -> list[float]:
+
+# This function, when given Person Object, returns a comparison of each electronic device used by a person to the total watts.
+# Input: Person1 -> phone total kWatts compare to average_charging_per_day
+# Output: total Watts that's being used per day on Person1 phone
+def person1_phone_average_charging_per_day(list1, value):
     new1 = []
-    for x in dict_phone:
-        new1.append(dict_phone[x])
-    if new1 < main.Person[phone_key]: #This is the five row on the Person Object calling the total_phone_charging_time in the test_file
-        total = main.Person[phone_key]
-        total_1 = (new1 / total) * 100  # This gets the percentage
-        print("Person uses less electricity consumption on phone by", new1)
-    else:
-        print("Person uses more electricity consumption on phone by", new1)
+    for x in list1:
+        if x.main.Person[2] < value:
+            new1.append(x)
+            print("Person1 uses above average kilo watts per day")
+        else:
+            print("Person1 uses below average kilo watts per day")
     return new1
 
 def conversion_to_hour(number):

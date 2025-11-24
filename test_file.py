@@ -2,6 +2,7 @@ import unittest
 import function
 import main
 from function import all_wattage, total_wattage_used
+from main import Person
 
 surveyed_data=[
     main.Person(
@@ -199,6 +200,13 @@ surveyed_data=[
 results={"Minimum":"This Person has used minimal amount of electricity which is good as it can save electricity bills","Medium":"This Person has used the medium amount of electricity, which is alright in saving electricity bills","High":"This Person has used high amount of electricity, which is not good in saving electricity bills"}
 
 class TestCases(unittest.TestCase):
+
+    def test_person1_phone_average_charging_per_day(self):
+        result = function.person1_phone_average_charging_per_day(surveyed_data, 11)
+        expected = 0
+
+        self.assertEqual(expected, result)
+
     def test_total_wattage_used(self):
         result=function.total_wattage_used(surveyed_data)
         expected=[64, 77, 1224, 1198, 166, 61, 2867, 17, 862, 5075, 5189, 1893]
