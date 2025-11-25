@@ -6,7 +6,7 @@ from main import Person
 
 surveyed_data=[
     main.Person(
-        {"Adam": 18},
+        "Adam",
         13.6,
         300,
         0,
@@ -22,7 +22,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Jack": 17},
+        "Jack",
         12.41,
         69.6,
         0,
@@ -38,7 +38,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Ramses": 18},
+        "Ramses",
         13.66,
         300,
         31.29,
@@ -54,7 +54,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Bella": 19},
+        "Bella",
         12.41,
         250,
         31.29,
@@ -70,7 +70,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Chris": 17},
+        "Chris",
         13.7,
         650,
         0,
@@ -86,7 +86,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Diana": 19},
+        "Diana",
         10.78,
         400,
         32.4,
@@ -102,7 +102,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Ethan": 18},
+        "Ethan",
         12.7,
         320,
         19.3,
@@ -118,7 +118,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Fiona": 17},
+        "Fiona",
         7.1,
         0,
         0,
@@ -134,7 +134,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"George": 19},
+        "George",
         12.0,
         450,
         38.99,
@@ -150,7 +150,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Hannah": 17},
+        "Hannah",
         11.9,
         300,
         28.9,
@@ -166,7 +166,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Ian": 18},
+        "Ian",
         11.2,
         500,
         31.29,
@@ -182,7 +182,7 @@ surveyed_data=[
     ),
 
     main.Person(
-        {"Julia": 19},
+        "Julia",
         13.0,
         350,
         0,
@@ -200,45 +200,52 @@ surveyed_data=[
 results={"Minimum":"This Person has used minimal amount of electricity which is good as it can save electricity bills","Medium":"This Person has used the medium amount of electricity, which is alright in saving electricity bills","High":"This Person has used high amount of electricity, which is not good in saving electricity bills"}
 
 class TestCases(unittest.TestCase):
-
-    def test_person1_phone_average_charging_per_day(self):
-        result = function.person1_phone_average_charging_per_day(surveyed_data, 11)
-        expected = 0
-
-        self.assertEqual(expected, result)
-
-    def test_total_wattage_used(self):
-        result=function.total_wattage_used(surveyed_data)
-        expected=[64, 77, 1224, 1198, 166, 61, 2867, 17, 862, 5075, 5189, 1893]
-        self.assertEqual(expected,result)
-    def test_total_cost_in_a_year(self):
-        result=function.total_costs_in_a_year(all_wattage(total_wattage_used(surveyed_data)))
-        expected=2156
-        self.assertEqual(expected,result)
-    def testing_testing_results(self):
-        result=function.testing_results(total_wattage_used(surveyed_data),results)
-        expected=['This Person has used minimal amount of electricity which is good as it can '
- 'save electricity bills',
- 'This Person has used minimal amount of electricity which is good as it can '
- 'save electricity bills',
- 'This Person has used the medium amount of electricity, which is alright in '
- 'saving electricity bills',
- 'This Person has used the medium amount of electricity, which is alright in '
- 'saving electricity bills',
- 'This Person has used the medium amount of electricity, which is alright in '
- 'saving electricity bills',
- 'This Person has used minimal amount of electricity which is good as it can '
- 'save electricity bills',
- 'This Person has used high amount of electricity, which is not good in saving '
- 'electricity bills',
- 'This Person has used minimal amount of electricity which is good as it can '
- 'save electricity bills',
- 'This Person has used the medium amount of electricity, which is alright in '
- 'saving electricity bills',
- 'This Person has used high amount of electricity, which is not good in saving '
- 'electricity bills',
- 'This Person has used high amount of electricity, which is not good in saving '
- 'electricity bills',
- 'This Person has used high amount of electricity, which is not good in saving '
- 'electricity bills']
-        self.assertEqual(expected,result)
+   def test_total_wattage_used(self):
+       result=function.total_wattage_used(surveyed_data)
+       expected=[64, 77, 1224, 1198, 166, 61, 2867, 17, 862, 5075, 5189, 1893]
+       self.assertEqual(expected,result)
+   def test_total_cost_in_a_year(self):
+       result=function.total_costs_in_a_year(all_wattage(total_wattage_used(surveyed_data)))
+       expected=2156
+       self.assertEqual(expected,result)
+   def testing_testing_results(self):
+       result=function.testing_results(total_wattage_used(surveyed_data),results)
+       expected=['This Person has used minimal amount of electricity which is good as it can '
+'save electricity bills',
+'This Person has used minimal amount of electricity which is good as it can '
+'save electricity bills',
+'This Person has used the medium amount of electricity, which is alright in '
+'saving electricity bills',
+'This Person has used the medium amount of electricity, which is alright in '
+'saving electricity bills',
+'This Person has used the medium amount of electricity, which is alright in '
+'saving electricity bills',
+'This Person has used minimal amount of electricity which is good as it can '
+'save electricity bills',
+'This Person has used high amount of electricity, which is not good in saving '
+'electricity bills',
+'This Person has used minimal amount of electricity which is good as it can '
+'save electricity bills',
+'This Person has used the medium amount of electricity, which is alright in '
+'saving electricity bills',
+'This Person has used high amount of electricity, which is not good in saving '
+'electricity bills',
+'This Person has used high amount of electricity, which is not good in saving '
+'electricity bills',
+'This Person has used high amount of electricity, which is not good in saving '
+'electricity bills']
+       self.assertEqual(expected,result)
+   def test_summary(self):
+       result=function.summary(surveyed_data)
+       expected=('Number of Calpoly Dormmates in Survey:',
+ 12,
+ 'Total amount of electricity that they used:',
+ 18693,
+ 'total_cost_year',
+ 2156,
+ 'Final Verdict=',
+ 'Most of the students are not overusing their electricity',
+ 'However',
+ ['Ethan', 'Hannah', 'Ian', 'Julia'],
+ 'needs to cut down on their spending')
+       self.assertEqual(expected,result)

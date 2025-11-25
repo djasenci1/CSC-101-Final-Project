@@ -1,7 +1,7 @@
 class Person:
 
    def __init__(self,
-           name: dict[str, float],
+           name: str,
            phone: float,
            laptop: float,
            ipad: float,
