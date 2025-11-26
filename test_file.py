@@ -301,6 +301,7 @@ class TestCases(unittest.TestCase):
  'Most of the students are not overusing their electricity',
  'However',
  [{'Ethan': 18}, {'Hannah': 17}, {'Ian': 18}, {'Julia': 19}],
- 'needs to cut down on their spending')
+ 'needs to cut down on their spending',
+"List of people with lowest kilo wattage phone device:", [{'Diana': 19}, 10.78, {'Fiona': 17}, 7.1])
        self.assertEqual(expected,result)
 

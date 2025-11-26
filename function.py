@@ -165,10 +165,14 @@ def summary(list1):
     total_watts = all_wattage(total_wattage_used(list1))
     total_cost = total_costs_in_a_year(total_watts)
 
+    some_of_the_lowest_kilo_wattage = person_phone_lowest_kilo_wattage(list1, 11)
+
+    wattage_list = total_wattage_used(list1)  # list of wattage numbers
     overusers = []
-    for p, watts in zip(list1, total_wattage_used(list1)):
-        if watts > 1500:
-            overusers.append(p.name)
+
+    for i in range(len(list1)):               # loop using index
+        if wattage_list[i] > 1500:
+            overusers.append(list1[i].name)   # access person by index
 
     verdict = (
         "Number of Calpoly Dormmates in Survey:", len(list1),
@@ -178,7 +182,11 @@ def summary(list1):
         "Most of the students are not overusing their electricity",
         "However",
         overusers,
-        "needs to cut down on their spending"
+        "needs to cut down on their spending",
+        "List of people with lowest kilo wattage phone device:",
+        some_of_the_lowest_kilo_wattage,
     )
 
     return verdict
+
+
