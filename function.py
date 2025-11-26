@@ -125,6 +125,7 @@ def verdict(list1):
    else:
        the_verdict="Most of the students are not overusing their electricity"
    return the_verdict
+
 def summary(list1):
    total_wattage = total_wattage_used(list1)
    all_watts = all_wattage(total_wattage)
