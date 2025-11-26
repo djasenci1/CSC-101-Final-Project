@@ -115,4 +115,26 @@ def testing_results(list1, result_messages):
 
     return the_result
 
+def verdict(list1):
+   counter=0
+   for i in list1:
+       if i>1500:
+           counter+=1
+   if counter>=len(list1)//2:
+       the_verdict="Most of the students have high electricity usage in the dorm"
+   else:
+       the_verdict="Most of the students are not overusing their electricity"
+   return the_verdict
+def summary(list1):
+   total_wattage = total_wattage_used(list1)
+   all_watts = all_wattage(total_wattage)
+   total_cost = total_costs_in_a_year(all_watts)
+   verdict_result = verdict(total_wattage)
+
+
+   return "Number of Calpoly Dormmates in Survey:", len(list1), "Total amount of electricity that they used:", all_watts, "total_cost_year",total_cost, "verdict", verdict_result
+
+
+
+
 
