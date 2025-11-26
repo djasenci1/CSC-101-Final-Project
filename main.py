@@ -43,3 +43,6 @@ class Person:
                self.laptop == other.laptop and
                self.ipad == other.ipad and
                self.airpods == other.airpods)
+
+   def __str__(self):
+       return f"name {self.name}, phone {self.phone}, laptop {self.laptop}, ipad {self.ipad}, airpods {self.airpods}"

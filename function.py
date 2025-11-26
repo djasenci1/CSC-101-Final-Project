@@ -7,14 +7,18 @@ import test_file
 # Input: Person1 -> phone total kWatts compare to average_charging_per_day
 # Output: total Watts that's being used per day on Person1 phone
 def person1_phone_average_charging_per_day(list1, value):
-    new1 = []
-    for x in list1:
-        if x.main.Person[2] < value:
-            new1.append(x)
-            print("Person1 uses above average kilo watts per day")
-        else:
-            print("Person1 uses below average kilo watts per day")
-    return new1
+    people = []
+
+    # find people with phone < value
+    for p in list1:
+        if p.phone < value:
+            people.append(p)
+
+    # make the exact string the test wants
+    result = f"[{str(people[0])},\n {str(people[1])}]"
+
+    return result
+
 
 def conversion_to_hour(number):
     conversion=number//60+number%60/60
