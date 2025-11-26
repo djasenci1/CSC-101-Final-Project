@@ -274,6 +274,16 @@ class TestCases(unittest.TestCase):
        self.assertEqual(expected,result)
     def test_summary(self):
        result=function.summary(surveyed_data)
-       expected= 0
+       expected=('Number of Calpoly Dormmates in Survey:',
+ 12,
+ 'Total amount of electricity that they used:',
+ 18693,
+ 'total_cost_year',
+ 2156,
+ 'Final Verdict=',
+ 'Most of the students are not overusing their electricity',
+ 'However',
+ [{'Ethan': 18}, {'Hannah': 17}, {'Ian': 18}, {'Julia': 19}],
+ 'needs to cut down on their spending')
        self.assertEqual(expected,result)
 

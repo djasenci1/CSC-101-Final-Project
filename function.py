@@ -102,8 +102,40 @@ def testing_results(list1, result_messages):
     return the_result
 
 
-# This function summarizes the survey results
+#This function identifies the individuals who are using High amounts of electricity
+def verdict(surveyed_data,total_wattaged_used):
+    verdict_list=[]
+    for i in range(len(total_wattaged_used)):
+        if total_wattaged_used[i]>1500:
+            verdict_list.append(surveyed_data[i].name)
+    return verdict_list
+
+#This function gives the final verdict, if over 50% of the people are using high amounts of electrcitiy, it will say, otherwise, it will say that most ofo the students are using normal amounts of electricity
+def final_verdict(list1):
+   counter=0
+   for i in list1:
+       if i>1500:
+           counter+=1
+   if counter>=len(list1)//2:
+       the_verdict="Most of the students have high electricity usage in the dorm"
+   else:
+       the_verdict="Most of the students are not overusing their electricity"
+   return the_verdict
+
+#Adam's Version of Summary:
 def summary(list1):
+   total_wattage = total_wattage_used(list1)
+   all_watts = all_wattage(total_wattage)
+   total_cost = total_costs_in_a_year(all_watts)
+   final_verdict_result = final_verdict(total_wattage)
+   verdict_list=verdict(list1, total_wattage)
+
+   return ("Number of Calpoly Dormmates in Survey:", len(list1), "Total amount of electricity that they used:",
+           all_watts, "total_cost_year",total_cost, "Final Verdict=", final_verdict_result,
+           "However", verdict_list, "needs to cut down on their spending")
+
+# This function summarizes the survey results
+def summary2(list1):
     total_watts = all_wattage(total_wattage_used(list1))
     total_cost = total_costs_in_a_year(total_watts)
 
