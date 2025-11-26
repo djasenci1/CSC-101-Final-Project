@@ -44,7 +44,6 @@ def person_laptop_lowest_kilo_wattage(list1, value):
 # Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
 def person_laptop_highest_kilo_wattage(list1, value):
     new1 = []
-
     for i in range(0, len(list1)):
         if list1[i].laptop > value:
          new1.append(list1[i].name)
