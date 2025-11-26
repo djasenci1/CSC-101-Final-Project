@@ -235,15 +235,31 @@ class TestCases(unittest.TestCase):
 
     def test_person_ipad_lowest_kilo_wattage(self):
         result = function.person_ipad_lowest_kilo_wattage(surveyed_data,100)
-        expected =  [{'Adam': 18},0, {'Jack': 17}, 0, {'Ramses': 18}, 31.29, {'Bella': 19}, 31.29, {'Chris': 17}, 0, {'Diana': 19}, 32.4, {'Ethan': 18}, 19.3, {'Fiona': 17}, 0, {'George': 19}, 38.99, {'Hannah': 17}, 28.9, {'Ian': 18},
- 31.29,
- {'Julia': 19},
- 0]
+        expected =  [{'Adam': 18},0, {'Jack': 17}, 0, {'Ramses': 18}, 31.29, {'Bella': 19}, 31.29, {'Chris': 17}, 0, {'Diana': 19}, 32.4, {'Ethan': 18}, 19.3, {'Fiona': 17}, 0, {'George': 19}, 38.99, {'Hannah': 17}, 28.9, {'Ian': 18}, 31.29, {'Julia': 19},0]
         self.assertEqual(result, expected)
 
+    def test_person_ipad_highest_kilo_wattage(self):
+        result = function.person_ipad_highest_kilo_wattage(surveyed_data, 100)
+        expected = [{'Adam': 18}, 0, {'Jack': 17}, 0, {'Ramses': 18}, 31.29, {'Bella': 19}, 31.29, {'Chris': 17}, 0,
+                    {'Diana': 19}, 32.4, {'Ethan': 18}, 19.3, {'Fiona': 17}, 0, {'George': 19}, 38.99, {'Hannah': 17},
+                    28.9, {'Ian': 18}, 31.29, {'Julia': 19}, 0]
+        self.assertEqual(result, expected)
 
+    def test_person_ipad_highest_kilo_wattage(self):
+        result = function.person_ipad_highest_kilo_wattage(surveyed_data, 30)
+        expected = [{'Ramses': 18}, 31.29, {'Bella': 19}, 31.29, {'Diana': 19}, 32.4, {'George': 19}, 38.99,
+                    {'Ian': 18}, 31.29]
+        self.assertEqual(result, expected)
 
+    def test_person_airpods_lowest_kilo_wattage(self):
+        result = function.person_airpods_lowest_kilo_wattage(surveyed_data, 0.09)
+        expected = [{'Adam': 18}, 0, {'Ramses': 18}, 0, {'Diana': 19}, 0, {'Hannah': 17}, 0]
+        self.assertEqual(result, expected)
 
+    def test_person_airpods_highest_kilo_wattage(self):
+        result = function.person_airpods_highest_kilo_wattage(surveyed_data, 1)
+        expected = [{'Jack': 17}, 1.52]
+        self.assertEqual(result, expected)
 
     def test_total_wattage_used(self):
        result=function.total_wattage_used(surveyed_data)

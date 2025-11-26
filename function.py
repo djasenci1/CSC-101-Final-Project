@@ -51,6 +51,65 @@ def person_laptop_highest_kilo_wattage(list1, value):
 
     return new1
 
+
+
+# This function, when given survey_data, returns people with the lowest kilo wattage ipad depend on if it's less than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_ipad_lowest_kilo_wattage(list1, value):
+   new1 = []
+
+
+   for i in range(0, len(list1)):
+       if list1[i].ipad < value:
+           new1.append(list1[i].name)
+           new1.append(list1[i].ipad)
+
+
+   return new1
+
+
+# This function, when given survey_data, returns people with the highest kilo wattage ipad depend on if it's greater than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_ipad_highest_kilo_wattage(list1, value):
+   new1 = []
+
+
+   for i in range(0, len(list1)):
+       if list1[i].ipad > value:
+           new1.append(list1[i].name)
+           new1.append(list1[i].ipad)
+   return new1
+
+
+# This function, when given survey_data, returns people with the lowest kilo wattage ipad depend on if it's less than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_airpods_lowest_kilo_wattage(list1, value):
+   new1 = []
+
+
+   for i in range(0, len(list1)):
+       if list1[i].airpods < value:
+           new1.append(list1[i].name)
+           new1.append(list1[i].airpods)
+   return new1
+
+
+# This function, when given survey_data, returns people with the highest kilo wattage ipad depend on if it's greater than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_airpods_highest_kilo_wattage(list1, value):
+   new1 = []
+
+
+   for i in range(0, len(list1)):
+       if list1[i].airpods > value:
+           new1.append(list1[i].name)
+           new1.append(list1[i].airpods)
+   return new1
+
 # This function converts minutes to hours
 def conversion_to_hour(number):
     conversion = number // 60 + number % 60 / 60
