@@ -233,6 +233,14 @@ class TestCases(unittest.TestCase):
         expected =  [{'Adam': 18}, 300, {'Ramses': 18}, 300, {'Bella': 19}, 250, {'Chris': 17}, 650, {'Diana': 19}, 400, {'Ethan': 18}, 320, {'George': 19}, 450, {'Hannah': 17}, 300, {'Ian': 18}, 500, {'Julia': 19}, 350]
         self.assertEqual(result, expected)
 
+    def test_person_ipad_lowest_kilo_wattage(self):
+        result = function.person_ipad_lowest_kilo_wattage(surveyed_data,100)
+        expected =  [{'Adam': 18},0, {'Jack': 17}, 0, {'Ramses': 18}, 31.29, {'Bella': 19}, 31.29, {'Chris': 17}, 0, {'Diana': 19}, 32.4, {'Ethan': 18}, 19.3, {'Fiona': 17}, 0, {'George': 19}, 38.99, {'Hannah': 17}, 28.9, {'Ian': 18},
+ 31.29,
+ {'Julia': 19},
+ 0]
+        self.assertEqual(result, expected)
+
 
 
 
