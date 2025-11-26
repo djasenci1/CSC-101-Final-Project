@@ -202,11 +202,12 @@ results={"Minimum":"This Person has used minimal amount of electricity which is 
 class TestCases(unittest.TestCase):
     pass
 
-    def test_person1_phone_average_charging_per_day(self):
-        result = function.person1_phone_average_charging_per_day(surveyed_data, 11)
+    def test_person_phone_kilo_watts_comparison(self):
+        result = function.person_phone_kilo_watts_comparison(surveyed_data, 11)
         expected = "[name Diana, phone 10.78, laptop 400, ipad 32.4, airpods 0,\n name Fiona, phone 7.1, laptop 0, ipad 0, airpods 0.09]"
 
         self.assertEqual(expected, result)
+
 
     def test_total_wattage_used(self):
        result=function.total_wattage_used(surveyed_data)

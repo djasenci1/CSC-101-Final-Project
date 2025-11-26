@@ -2,22 +2,33 @@ import main
 import test_file
 
 
-
-# This function, when given Person Object, returns a comparison of each electronic device used by a person to the total watts.
-# Input: Person1 -> phone total kWatts compare to average_charging_per_day
+# This function, when given Person object, it returns the person dictonary with the a lower phone kilo wattage compare to the value.
+# Input: Person1 -> phone total kWatts compare to average_charging_per_day (which is the value)
 # Output: total Watts that's being used per day on Person1 phone
-def person1_phone_average_charging_per_day(list1, value):
-    people = []
+def person_phone_kilo_watts_comparison(list1, value):
+    person = []
 
-    # find people with phone < value
-    for p in list1:
-        if p.phone < value:
-            people.append(p)
+    # find the person phone that has a lower kilo watts phone < value
+    for x in list1:
+        if x.phone < value:
+            person.append(x)
 
-    # make the exact string the test wants
-    result = f"[{str(people[0])},\n {str(people[1])}]"
+    # make it into a str not a list (having the name of the person and phone)
+    result = f"[{str(person[0])},\n {str(person[1])}]"
 
     return result
+# This result tells us who has a phone with low kil wattage
+
+def person_laptop_kilo_watts_comparison(list1, value):
+    person = []
+    for x in list1:
+        if x.laptop < value:
+            person.append(x)
+
+    result = f"[{str(person[0])},\n {str(person[1])}]"
+    return result
+# This result tells us who has a laptop with a low kilo wattage
+
 
 
 def conversion_to_hour(number):
