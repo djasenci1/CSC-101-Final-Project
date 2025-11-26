@@ -1,62 +1,11 @@
 import main
 
-# This helper function formats a Person object for output
-def format_person(p):
-    return f"name {p.name}, phone {p.phone}, laptop {p.laptop}, ipad {p.ipad}, airpods {p.airpods}"
-
-
-# ----------------------------------------------------------
-# This function, when given a Person object, returns the person dictionary
-# with a lower phone kilo wattage compared to the value.
-# Input: Person1 -> phone total kWatts compare to average_charging_per_day (value)
-# Output: total Watts that's being used per day on Person1 phone
-def person_phone_kilo_watts_comparison(list1, value):
-    person = [x for x in list1 if x.phone < value]
-
-    if not person:
-        return ""
-
-    # make it into a str not a list (having the name of the person and phone)
-    result = "[" + ",\n ".join(format_person(p) for p in person) + "]"
-    return result
-# This result tells us who has a phone with low kilo wattage
-
-
-# This function tells people with the lowest kilo wattage on their laptop
-def person_laptop_kilo_watts_comparison(list1, value):
-    person = [x for x in list1 if x.laptop < value]
-
-    if not person:
-        return ""
-
-    # make it into a str not a list (having the name of the person and laptop)
-    result = "[" + ",\n ".join(format_person(p) for p in person) + "]"
-    return result
-
-
-# This function tells people with the lowest kilo wattage on their ipad
-def person_ipad_kilo_watts_comparison(list1, value):
-    person = [x for x in list1 if x.ipad < value]
-
-    if not person:
-        return ""
-
-    # make it into a str not a list (having the name of the person and ipad)
-    result = "[" + ",\n ".join(format_person(p) for p in person) + "]"
-    return result
-
-
-# This function tells people with the lowest kilo wattage on their airpods
-def person_airpods_kilo_watts_comparison(list1, value):
-    person = [x for x in list1 if x.airpods < value]
-
-    if not person:
-        return ""
-
-    # make it into a str not a list (having the name of the person and airpods)
-    result = "[" + ",\n ".join(format_person(p) for p in person) + "]"
-    return result
-
+def kilo_wattage_comparsion(list1, value):
+    new1 = []
+    for x in list1:
+        if x.phone > value:
+            new1.append(x)
+    return new1
 
 # This function converts minutes to hours
 def conversion_to_hour(number):
