@@ -8,7 +8,7 @@ import test_file
 def person_phone_kilo_watts_comparison(list1, value):
     person = []
 
-    # find the person phone that has a lower kilo watts phone < value
+    # find people will the lowest kilo wattage phone < value
     for x in list1:
         if x.phone < value:
             person.append(x)
@@ -17,18 +17,21 @@ def person_phone_kilo_watts_comparison(list1, value):
     result = f"[{str(person[0])},\n {str(person[1])}]"
 
     return result
-# This result tells us who has a phone with low kil wattage
+# This result tells us who has a phone with low kilo wattage
 
 def person_laptop_kilo_watts_comparison(list1, value):
     person = []
+
+    # find people will the lowest kilo wattage laptop < value
     for x in list1:
         if x.laptop < value:
             person.append(x)
 
+    # make it into a str not a list (having the name of the person and laptop)
     result = f"[{str(person[0])},\n {str(person[1])}]"
-    return result
-# This result tells us who has a laptop with a low kilo wattage
 
+    return result
+# This result tells people will the lowest kilo wattage on their laptop
 
 
 def conversion_to_hour(number):

@@ -205,8 +205,13 @@ class TestCases(unittest.TestCase):
     def test_person_phone_kilo_watts_comparison(self):
         result = function.person_phone_kilo_watts_comparison(surveyed_data, 11)
         expected = "[name Diana, phone 10.78, laptop 400, ipad 32.4, airpods 0,\n name Fiona, phone 7.1, laptop 0, ipad 0, airpods 0.09]"
-
         self.assertEqual(expected, result)
+
+    def test_person_laptop_phone_kilo_watts_comparison(self):
+        result = function.person_phone_kilo_watts_comparison(surveyed_data, 200)
+        expected = "[name Adam, phone 13.6, laptop 300, ipad 0, airpods 0,\n name Jack, phone 12.41, laptop 69.6, ipad 0, airpods 1.52]"
+        self.assertEqual(expected, result)
+
 
 
     def test_total_wattage_used(self):
