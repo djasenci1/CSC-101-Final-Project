@@ -1,10 +1,55 @@
 import main
 
-def kilo_wattage_comparsion(list1, value):
+# This function, when given survey_data, returns people with the lowest kilo wattage phone depend on if it's less than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_phone_lowest_kilo_wattage(list1, value):
     new1 = []
-    for x in list1:
-        if x.phone > value:
-            new1.append(x)
+
+    for i in range(0, len(list1)):
+        if  list1[i].phone < value:
+             new1.append(list1[i].name)
+             new1.append(list1[i].phone)
+
+    return new1
+
+# This function, when given survey_data, returns people with the highest kilo wattage phone depend on if it's greater than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_phone_highest_kilo_wattage(list1, value):
+    new1 = []
+
+    for i in range(0, len(list1)):
+        if list1[i].phone > value:
+            new1.append(list1[i].name)
+            new1.append(list1[i].phone)
+
+    return new1
+
+# This function, when given survey_data, returns people with the lowest kilo wattage laptop depend on if it's less than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_laptop_lowest_kilo_wattage(list1, value):
+    new1 = []
+
+    for i in range(0, len(list1)):
+        if list1[i].laptop < value:
+            new1.append(list1[i].name)
+            new1.append(list1[i].laptop)
+
+    return new1
+
+# This function, when given survey_data, returns people with the highest kilo wattage laptop depend on if it's greater than 11 kilo wattage (value)
+# Intput: survey_data -> list1 and value -> 11 kilo wattage
+# Output: A new dictorary of people with the lowest kilo wattage with they phone kilo_wattage displayed
+def person_laptop_highest_kilo_wattage(list1, value):
+    new1 = []
+
+    for i in range(0, len(list1)):
+        if list1[i].laptop > value:
+         new1.append(list1[i].name)
+         new1.append(list1[i].laptop)
+
     return new1
 
 # This function converts minutes to hours
