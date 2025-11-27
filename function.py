@@ -171,7 +171,6 @@ def final_verdict(list1):
 
 def ways_to_improve():
     return " 1. Unplug devices when not in use (chargers, speakers, etc.).\n 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
-
 # This function summarizes the survey results
 def summary(list1):
    lowest_watt_hour=lowest_device(list1)

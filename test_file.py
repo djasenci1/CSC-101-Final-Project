@@ -221,9 +221,6 @@ class TestCases(unittest.TestCase):
         expected=0
         self.assertEqual(expected,result)
 
-
-
-
     def test_total_wattage_used(self):
        result=function.total_wattage_used(surveyed_data)
        expected=[64, 77, 1224, 1198, 166, 61, 2867, 17, 862, 5075, 5189, 1893]
