@@ -1,7 +1,7 @@
 class Person:
 
    def __init__(self,
-           name: dict[str, float],
+           name: str,
            phone: float,
            laptop: float,
            ipad: float,
@@ -33,7 +33,7 @@ class Person:
        self.average_airpods_charging_frequency = average_airpods_charging_frequency
 
    def __repr__(self):
-       return "name {}, phone {}, laptop {}, ipad {}, airpods {}".format(self.name, self.phone, self.laptop, self.ipad, self.airpods)
+       return "name {}, phone {}, laptop {}, ipad {}, airpods {}, phone charging time {}, laptop charging time, {}, ipad charging time {}, airpods charging time {}, phone charging frequency {}, laptop charging frequency {}, ipad charging frequency {}, airpods charging frequency {}".format(self.name, self.phone, self.laptop, self.ipad, self.airpods, self.average_phone_charging_frequency,self.average_laptop_charging_frequency,self.average_ipad_charging_time, self.average_airpods_charging_frequency,self.average_phone_charging_time,self.average_laptop_charging_time,self.average_ipad_charging_time,self.average_airpods_charging_time)
 
    def __eq__(self, other):
        return (self is other or
@@ -42,7 +42,17 @@ class Person:
                self.phone == other.phone and
                self.laptop == other.laptop and
                self.ipad == other.ipad and
-               self.airpods == other.airpods)
+               self.airpods == other.airpods and
+
+               self.average_phone_charging_time == other.average_phone_charging_time and
+               self.average_laptop_charging_time == other.average_laptop_charging_time and
+               self.average_ipad_charging_time == other.average_ipad_charging_time and
+               self.average_airpods_charging_time == other.average_airpods_charging_time and
+
+               self.average_phone_charging_frequency == other.average_phone_charging_frequency and
+               self.average_laptop_charging_frequency == other.average_laptop_charging_frequency and
+               self.average_ipad_charging_frequency == other.average_ipad_charging_frequency and
+               self.average_airpods_charging_frequency == other.average_airpods_charging_frequency)
 
    def __str__(self):
        return f"name {self.name}, phone {self.phone}, laptop {self.laptop}, ipad {self.ipad}, airpods {self.airpods}"

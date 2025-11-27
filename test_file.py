@@ -6,7 +6,7 @@ from function import all_wattage, total_wattage_used
 
 surveyed_data=[
    main.Person(
-       {"Adam": 18},
+       "Adam",
        13.6,
        300,
        0,
@@ -23,7 +23,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Jack": 17},
+       "Jack",
        12.41,
        69.6,
        0,
@@ -40,7 +40,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Ramses": 18},
+       "Ramses",
        13.66,
        300,
        31.29,
@@ -57,7 +57,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Bella": 19},
+       "Bella",
        12.41,
        250,
        31.29,
@@ -74,7 +74,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Chris": 17},
+       "Chris",
        13.7,
        650,
        0,
@@ -91,7 +91,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Diana": 19},
+       "Diana",
        10.78,
        400,
        32.4,
@@ -108,7 +108,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Ethan": 18},
+       "Ethan",
        12.7,
        320,
        19.3,
@@ -125,7 +125,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Fiona": 17},
+       "Fiona",
        7.1,
        0,
        0,
@@ -142,7 +142,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"George": 19},
+       "Douglas",
        12.0,
        450,
        38.99,
@@ -159,7 +159,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Hannah": 17},
+       "Hannah",
        11.9,
        300,
        28.9,
@@ -176,7 +176,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Ian": 18},
+       "Ian",
        11.2,
        500,
        31.29,
@@ -193,7 +193,7 @@ surveyed_data=[
 
 
    main.Person(
-       {"Julia": 19},
+       "Julia",
        13.0,
        350,
        0,
@@ -212,35 +212,14 @@ results={"Minimum":"This Person has used minimal amount of electricity which is 
 
 
 class TestCases(unittest.TestCase):
-
-    def test_person_phone_lowest_kilo_wattage(self):
-        result = function.person_phone_lowest_kilo_wattage(surveyed_data,11)
-        expected =  [{'Diana': 19}, 10.78, {'Fiona': 17}, 7.1]
-        self.assertEqual(result, expected)
-
-    def test_person_phone_highest_kilo_wattage(self):
-        result = function.person_phone_highest_kilo_wattage(surveyed_data,11)
-        expected = [{'Adam': 18}, 13.6, {'Jack': 17}, 12.41, {'Ramses': 18}, 13.66, {'Bella': 19}, 12.41, {'Chris': 17}, 13.7, {'Ethan': 18}, 12.7, {'George': 19}, 12.0, {'Hannah': 17}, 11.9, {'Ian': 18}, 11.2, {'Julia': 19}, 13.0]
-        self.assertEqual(result, expected)
-
-    def test_person_laptop_lowest_kilo_wattage(self):
-        result = function.person_laptop_lowest_kilo_wattage(surveyed_data,11)
-        expected = [{'Fiona': 17}, 0]
-        self.assertEqual(result, expected)
-
-    def test_person_laptop_highest_kilo_wattage(self):
-        result = function.person_laptop_highest_kilo_wattage(surveyed_data,200)
-        expected =  [{'Adam': 18}, 300, {'Ramses': 18}, 300, {'Bella': 19}, 250, {'Chris': 17}, 650, {'Diana': 19}, 400, {'Ethan': 18}, 320, {'George': 19}, 450, {'Hannah': 17}, 300, {'Ian': 18}, 500, {'Julia': 19}, 350]
-        self.assertEqual(result, expected)
-
-    def test_person_ipad_lowest_kilo_wattage(self):
-        result = function.person_ipad_lowest_kilo_wattage(surveyed_data,100)
-        expected =  [{'Adam': 18},0, {'Jack': 17}, 0, {'Ramses': 18}, 31.29, {'Bella': 19}, 31.29, {'Chris': 17}, 0, {'Diana': 19}, 32.4, {'Ethan': 18}, 19.3, {'Fiona': 17}, 0, {'George': 19}, 38.99, {'Hannah': 17}, 28.9, {'Ian': 18},
- 31.29,
- {'Julia': 19},
- 0]
-        self.assertEqual(result, expected)
-
+    def test_person_phone_lowest_wattage(self):
+        result=function.person_phone_lowest_wattage(surveyed_data)
+        expected=0
+        self.assertEqual(expected,result)
+    def test_person_airpods_lowest_wattage(self):
+        result=function.person_airpods_lowest_wattage(surveyed_data)
+        expected=0
+        self.assertEqual(expected,result)
 
 
 
@@ -282,16 +261,23 @@ class TestCases(unittest.TestCase):
        self.assertEqual(expected,result)
     def test_summary(self):
        result=function.summary(surveyed_data)
-       expected=('Number of Calpoly Dormmates in Survey:',
- 12,
- 'Total amount of electricity that they used:',
- 18693,
- 'total_cost_year',
- 2156,
- 'Final Verdict=',
- 'Most of the students are not overusing their electricity',
- 'However',
- [{'Ethan': 18}, {'Hannah': 17}, {'Ian': 18}, {'Julia': 19}],
- 'needs to cut down on their spending')
+       expected=(
+               "Number of Calpoly Dormmates in Survey: 12\n"
+               "Lowest Device Watt Hour: 0.09 Wh\n"
+               "Highest Device Watt Hour: 650 Wh\n"
+               "Total amount of electricity that they used: 18693 watts \n"
+               "Total Cost used by these individuals in a year: 2156 dollars \n"
+               "Assuming that there is 5500 freshmen at Calpoly, the total cost for the entire year for all the freshmens will be: 988166 dollars\n"
+               "Final Verdict : Most of the students are not overusing their electricity\n"
+               "However, ['Ethan', 'Hannah', 'Ian', 'Julia'] need(s) to cut down on their electricity usage\n"
+               "\n"
+               "Some tips include for saving power include: \n"
+               " 1. Unplug devices when not in use (chargers, speakers, etc.).\n"
+               " 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n"
+               " 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
+           )
        self.assertEqual(expected,result)
+
+
+print(function.summary(surveyed_data))
 
