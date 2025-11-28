@@ -555,4 +555,14 @@ class TestCases(unittest.TestCase):
 print(function.summary(surveyed_data))
 print("\n"+"\n"+function.summary(reduced_surveyed_data))
 
+output_file_path = 'summary_output.txt'
+
+# Open the file in write mode ('w') and write the results
+try:
+    with open(output_file_path, 'w') as f:
+        f.write(function.summary(surveyed_data))
+    print("\n"+f"Successfully saved results to {output_file_path}")
+except:
+    print("Error saving file")
+
 
