@@ -1,76 +1,78 @@
 import main
 
+def lowest_wattage_hour_filter(list1):
+    lowest_filter=[]
 
-def person_phone_lowest_wattage(list1):
     for i in range(len(list1)):
         if i==0:
-            lowest_value=list1[i].phone
-        elif lowest_value == 0:
-            lowest_value = list1[i].phone
-        elif list1[i].phone < lowest_value and list1[i].phone != 0:
-            lowest_value=list1[i].phone
-    return lowest_value
-def person_phone_highest_wattage(list1):
-    for i in range(len(list1)):
-        if i==0:
-            highest_value=list1[i].phone
-        elif list1[i].phone>highest_value:
-            highest_value=list1[i].phone
-    return highest_value
-def person_laptop_lowest_wattage(list1):
-    for i in range(len(list1)):
-        if i==0:
-            lowest_value=list1[i].laptop
-        elif lowest_value == 0:
-            lowest_value = list1[i].laptop
-        elif list1[i].laptop < lowest_value and list1[i].laptop != 0:
-            lowest_value=list1[i].laptop
-    return lowest_value
-def person_laptop_highest_wattage(list1):
+            lowest_phone_value=list1[i].phone
+        elif lowest_phone_value == 0:
+            lowest_phone_value = list1[i].phone
+        elif list1[i].phone < lowest_phone_value and list1[i].phone != 0:
+            lowest_phone_value=list1[i].phone
+    lowest_filter.append(lowest_phone_value)
+
+    for j in range(len(list1)):
+        if j == 0:
+            lowest_laptop_value = list1[j].laptop
+        elif lowest_laptop_value == 0:
+            lowest_laptop_value = list1[j].laptop
+        elif list1[j].laptop < lowest_laptop_value and list1[j].laptop != 0:
+            lowest_laptop_value = list1[j].laptop
+    lowest_filter.append(lowest_laptop_value)
+
+    for k in range(len(list1)):
+        if k==0:
+            lowest_ipad_value=list1[k].ipad
+        elif lowest_ipad_value == 0:
+            lowest_ipad_value = list1[k].ipad
+        elif list1[k].ipad<lowest_ipad_value and list1[k].ipad!=0:
+            lowest_ipad_value=list1[k].ipad
+    lowest_filter.append(lowest_ipad_value)
+
+    for l in range(len(list1)):
+        if l == 0:
+            lowest_airpods_value = list1[l].airpods
+        elif lowest_airpods_value == 0:
+            lowest_airpods_value = list1[l].airpods
+        elif list1[l].airpods < lowest_airpods_value and list1[l].airpods != 0:
+            lowest_airpods_value = list1[l].airpods
+    lowest_filter.append(lowest_airpods_value)
+    return lowest_filter
+
+def highest_wattage_hour_filter(list1):
+    highest_filter=[]
+
     for i in range(len(list1)):
         if i == 0:
-            highest_value = list1[i].laptop
-        elif list1[i].laptop > highest_value:
-            highest_value = list1[i].laptop
-    return highest_value
-def person_ipad_lowest_wattage(list1):
-    for i in range(len(list1)):
-        if i==0:
-            lowest_value=list1[i].ipad
-        elif lowest_value == 0:
-            lowest_value = list1[i].ipad
-        elif list1[i].ipad<lowest_value and list1[i].ipad!=0:
-            lowest_value=list1[i].ipad
-    return lowest_value
-def person_ipad_highest_wattage(list1):
-    for i in range(len(list1)):
-        if i == 0:
-            highest_value = list1[i].ipad
-        elif list1[i].ipad > highest_value:
-            highest_value = list1[i].ipad
-    return highest_value
-def person_airpods_lowest_wattage(list1):
-    for i in range(len(list1)):
-        if i==0:
-            lowest_value=list1[i].airpods
-        elif lowest_value == 0:
-            lowest_value = list1[i].airpods
-        elif list1[i].airpods < lowest_value and list1[i].airpods != 0:
-            lowest_value=list1[i].airpods
-    return lowest_value
-def person_airpods_highest_wattage(list1):
-    for i in range(len(list1)):
-        if i == 0:
-            highest_value = list1[i].airpods
-        elif list1[i].airpods > highest_value:
-            highest_value = list1[i].airpods
-    return highest_value
+            highest_phone_value = list1[i].phone
+        elif list1[i].phone > highest_phone_value:
+            highest_phone_value = list1[i].phone
+
+    for j in range(len(list1)):
+        if j == 0:
+            highest_laptop_value = list1[j].laptop
+        elif list1[j].laptop > highest_laptop_value:
+            highest_laptop_value = list1[j].laptop
+    highest_filter.append(highest_laptop_value)
+
+    for k in range(len(list1)):
+        if k == 0:
+            highest_ipad_value = list1[k].ipad
+        elif list1[k].ipad > highest_ipad_value:
+            highest_ipad_value = list1[k].ipad
+    highest_filter.append(highest_ipad_value)
+
+    for l in range(len(list1)):
+        if l == 0:
+            highest_airpods_value = list1[l].airpods
+        elif list1[l].airpods > highest_airpods_value:
+            highest_airpods_value = list1[l].airpods
+    highest_filter.append(highest_airpods_value)
+    return highest_filter
+
 def lowest_device(list1):
-    lowest_phone=person_phone_lowest_wattage(list1)
-    lowest_laptop=person_laptop_lowest_wattage(list1)
-    lowest_ipad=person_ipad_lowest_wattage(list1)
-    lowest_airpods=person_airpods_lowest_wattage(list1)
-    lowest_device_list=[lowest_phone,lowest_laptop,lowest_ipad,lowest_airpods]
+    lowest_device_list=lowest_wattage_hour_filter(list1)
 
     for i in range(len(lowest_device_list)):
         if i==0:
@@ -80,11 +82,7 @@ def lowest_device(list1):
     return lowest_value
 
 def highest_device(list1):
-    highest_phone = person_phone_highest_wattage(list1)
-    highest_laptop = person_laptop_highest_wattage(list1)
-    highest_ipad = person_ipad_highest_wattage(list1)
-    highest_airpods = person_airpods_highest_wattage(list1)
-    highest_device_list = [highest_phone, highest_laptop, highest_ipad, highest_airpods]
+    highest_device_list = highest_wattage_hour_filter(list1)
 
     for i in range(len(highest_device_list)):
         if i == 0:
@@ -104,11 +102,21 @@ def total_wattage_used(list1):
     total_wattage = 0
     wattage_list = []
 
+
     for i in range(len(list1)):
-        total_wattage += list1[i].phone * conversion_to_hour(list1[i].average_phone_charging_time) * list1[i].average_phone_charging_frequency
-        total_wattage += list1[i].laptop * conversion_to_hour(list1[i].average_laptop_charging_time) * list1[i].average_laptop_charging_frequency
-        total_wattage += list1[i].ipad * conversion_to_hour(list1[i].average_ipad_charging_time) * list1[i].average_ipad_charging_frequency
-        total_wattage += list1[i].airpods * conversion_to_hour(list1[i].average_airpods_charging_time) * list1[i].average_airpods_charging_frequency
+        phone_charging_time = conversion_to_hour(list1[i].average_phone_charging_time) * list1[i].average_phone_charging_frequency
+        laptop_charging_time=conversion_to_hour(list1[i].average_laptop_charging_time) * list1[i].average_laptop_charging_frequency
+        ipad_charging_time=conversion_to_hour(list1[i].average_ipad_charging_time) * list1[i].average_ipad_charging_frequency
+        airpods_charging_time=conversion_to_hour(list1[i].average_airpods_charging_time) * list1[i].average_airpods_charging_frequency
+
+        if phone_charging_time!=0:
+            total_wattage += list1[i].phone/phone_charging_time
+        if laptop_charging_time!=0:
+            total_wattage += list1[i].laptop/laptop_charging_time
+        if ipad_charging_time!=0:
+            total_wattage += list1[i].ipad/ipad_charging_time
+        if airpods_charging_time!=0:
+            total_wattage += list1[i].airpods/airpods_charging_time
         wattage_list.append(int(total_wattage))
         total_wattage = 0
 
@@ -116,23 +124,23 @@ def total_wattage_used(list1):
 
 
 # This function sums all wattages in a list
-def all_wattage(list1):
+def all_wattage(wattage_list):
     total_wattage_number = 0
-    for i in list1:
+    for i in wattage_list:
         total_wattage_number += i
     return total_wattage_number
 
 
 # This function calculates total electricity cost in a year
-def total_costs_in_a_year(number):
-    total_electricity_cost = int(number * 0.000316 * 365)
+def total_costs_in_a_year(total_wattage_number):
+    total_electricity_cost = int(total_wattage_number * 0.000316 * 365)
     return total_electricity_cost
 
 
 # This function categorizes usage based on wattage thresholds
-def testing_results(list1, result_messages):
+def the_results(wattage_list, result_messages):
     the_result = []
-    for i in list1:
+    for i in wattage_list:
         if i > 1500:
             the_result.append(result_messages["High"])
         elif i > 150:
@@ -153,8 +161,8 @@ def prediction(list1):
     total_wattage = total_wattage_used(list1)
     all_watts = all_wattage(total_wattage)
     total_cost = total_costs_in_a_year(all_watts)
-    total_population=5500
-    predicted_result=total_cost*total_population//len(list1)
+    total_freshmen_population=5500
+    predicted_result=total_cost*total_freshmen_population//len(list1)
     return predicted_result
 
 #This function gives the final verdict, if over 50% of the people are using high amounts of electrcitiy, it will say, otherwise, it will say that most ofo the students are using normal amounts of electricity
@@ -171,6 +179,7 @@ def final_verdict(list1):
 
 def ways_to_improve():
     return " 1. Unplug devices when not in use (chargers, speakers, etc.).\n 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
+
 # This function summarizes the survey results
 def summary(list1):
    lowest_watt_hour=lowest_device(list1)
@@ -186,13 +195,15 @@ def summary(list1):
            "Number of Calpoly Dormmates in Survey: " + str(len(list1)) + "\n"
            "Lowest Device Watt Hour: "+str(lowest_watt_hour)+" Wh\n"
             "Highest Device Watt Hour: "+str(highest_watt_hour)+" Wh\n"
-           "Total amount of electricity that they used: " + str(all_watts) + " watts \n"
+           "Total amount of electricity that they used in a day: " + str(all_watts) + " watts \n"
            "Total Cost used by these individuals in a year: " + str(total_cost) + " dollars \n"
-           "Assuming that there is 5500 freshmen at Calpoly, the total cost for the entire year for all the freshmens will be: " +str(predicted)+" dollars\n"
+           "Assuming that there is 5500 freshmen at Calpoly, the total cost for the entire year for all the freshmen will be: " +str(predicted)+" dollars\n"
            "Final Verdict : " + str(final_verdict_result) + "\n"
            "However, " + str(verdict_list) + " need(s) to cut down on their electricity usage" +"\n"
-           "\nSome tips include for saving power include: "+ "\n"+improvement
+           "\nSome tips for saving power include: "+ "\n"+improvement
    )
+
+
 
 
 
