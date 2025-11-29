@@ -552,17 +552,15 @@ class TestCases(unittest.TestCase):
        self.assertEqual(expected,result)
 
 
-print(function.summary(surveyed_data))
-print("\n"+"\n"+function.summary(reduced_surveyed_data))
-
+#This portion saves the function summary output into a new text file
 output_file_path = 'summary_output.txt'
-
-# Open the file in write mode ('w') and write the results
 try:
     with open(output_file_path, 'w') as f:
         f.write(function.summary(surveyed_data))
     print("\n"+f"Successfully saved results to {output_file_path}")
 except:
     print("Error saving file")
+
+
 
 

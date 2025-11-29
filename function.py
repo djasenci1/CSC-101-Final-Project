@@ -1,5 +1,6 @@
 import main
 
+#This function filters out the lowest wattage hour for the four different devices (phone, laptop, ipad, airpod)
 def lowest_wattage_hour_filter(list1):
     lowest_filter=[]
 
@@ -40,6 +41,7 @@ def lowest_wattage_hour_filter(list1):
     lowest_filter.append(lowest_airpods_value)
     return lowest_filter
 
+#This function filters out the highest wattage hour for the four different devices (phone, laptop, ipad, airpod)
 def highest_wattage_hour_filter(list1):
     highest_filter=[]
 
@@ -71,6 +73,7 @@ def highest_wattage_hour_filter(list1):
     highest_filter.append(highest_airpods_value)
     return highest_filter
 
+#This function goes through the lowest value of each device and compares them, outputing the real lowest device wattage
 def lowest_device(list1):
     lowest_device_list=lowest_wattage_hour_filter(list1)
 
@@ -80,7 +83,7 @@ def lowest_device(list1):
         elif lowest_device_list[i]<lowest_value:
             lowest_value=lowest_device_list[i]
     return lowest_value
-
+#This function goes through the highest value of each device and compares them, outputing the real highest device wattage
 def highest_device(list1):
     highest_device_list = highest_wattage_hour_filter(list1)
 
@@ -150,6 +153,7 @@ def the_results(wattage_list, result_messages):
 
     return the_result
 
+#This function identifies the individuals who are using more electricity than needed
 def verdict(surveyed_data,total_wattaged_used):
     verdict_list=[]
     for i in range(len(total_wattaged_used)):
@@ -157,6 +161,7 @@ def verdict(surveyed_data,total_wattaged_used):
             verdict_list.append(surveyed_data[i].name)
     return verdict_list
 
+#This function predicts how much money the school would have to pay every year for freshmen assuming that there are only 5500 freshmens
 def prediction(list1):
     total_wattage = total_wattage_used(list1)
     all_watts = all_wattage(total_wattage)
@@ -165,7 +170,9 @@ def prediction(list1):
     predicted_result=total_cost*total_freshmen_population//len(list1)
     return predicted_result
 
-#This function gives the final verdict, if over 50% of the people are using high amounts of electrcitiy, it will say, otherwise, it will say that most ofo the students are using normal amounts of electricity
+#This function gives the final verdict, if over 50% of the people are using high amounts of electrcitiy, it will say:
+# "Most of the students have high electricity usage in the dorm", otherwise, it will say:
+#"Most of the students are not overusing their electricity"
 def final_verdict(list1):
    counter=0
    for i in list1:
@@ -180,7 +187,7 @@ def final_verdict(list1):
 def ways_to_improve():
     return " 1. Unplug devices when not in use (chargers, speakers, etc.).\n 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
 
-# This function summarizes the survey results
+# This function summarizes the survey results and returns a string value with all the information we've gathered
 def summary(list1):
    lowest_watt_hour=lowest_device(list1)
    highest_watt_hour=highest_device(list1)
@@ -202,9 +209,6 @@ def summary(list1):
            "However, " + str(verdict_list) + " need(s) to cut down on their electricity usage" +"\n"
            "\nSome tips for saving power include: "+ "\n"+improvement
    )
-
-
-
 
 
 
