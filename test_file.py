@@ -1,7 +1,7 @@
 import unittest
 import function
 import main
-from function import all_wattage, total_wattage_used
+
 
 
 surveyed_data=[
