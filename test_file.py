@@ -556,7 +556,7 @@ class TestCases(unittest.TestCase):
 output_file_path = 'summary_output.txt'
 try:
     with open(output_file_path, 'w') as f:
-        f.write(function.summary(surveyed_data))
+        f.write(function.summary(surveyed_data,results))
     print("\n"+f"Successfully saved results to {output_file_path}")
 except:
     print("Error saving file")
