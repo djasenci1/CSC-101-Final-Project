@@ -513,7 +513,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected,result)
 
     def test_summary_1(self):
-       result=function.summary(surveyed_data)
+       result=function.summary(surveyed_data,results)
        expected=(
        "Number of Calpoly Dormmates in Survey: 12\n"
        "Lowest Device Watt Hour: 0.09 Wh\n"
@@ -532,7 +532,7 @@ class TestCases(unittest.TestCase):
 
        self.assertEqual(expected,result)
     def test_summary_2(self):
-       result=function.summary(reduced_surveyed_data)
+       result=function.summary(reduced_surveyed_data,results)
        expected=(
        "Number of Calpoly Dormmates in Survey: 8\n"
        "Lowest Device Watt Hour: 0.09 Wh\n"

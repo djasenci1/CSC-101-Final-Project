@@ -154,10 +154,10 @@ def the_results(wattage_list, result_messages):
     return the_result
 
 #This function identifies the individuals who are using more electricity than needed
-def verdict(surveyed_data,total_wattaged_used):
+def verdict(surveyed_data,the_result):
     verdict_list=[]
-    for i in range(len(total_wattaged_used)):
-        if total_wattaged_used[i]>1500:
+    for i in range(len(the_result)):
+        if the_result[i]=='This Person has used high amount of electricity, which is not good in saving electricity bills':
             verdict_list.append(surveyed_data[i].name)
     return verdict_list
 
@@ -188,7 +188,7 @@ def ways_to_improve():
     return " 1. Unplug devices when not in use (chargers, speakers, etc.).\n 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
 
 # This function summarizes the survey results and returns a string value with all the information we've gathered
-def summary(list1):
+def summary(list1,result_message):
    lowest_watt_hour=lowest_device(list1)
    highest_watt_hour=highest_device(list1)
    total_wattage = total_wattage_used(list1)
@@ -196,7 +196,8 @@ def summary(list1):
    total_cost = total_costs_in_a_year(all_watts)
    predicted=prediction(list1)
    final_verdict_result = final_verdict(total_wattage)
-   verdict_list=verdict(list1, total_wattage)
+   results=the_results(total_wattage,result_message)
+   verdict_list=verdict(list1, results)
    improvement=ways_to_improve()
    return (
            "Number of Calpoly Dormmates in Survey: " + str(len(list1)) + "\n"
