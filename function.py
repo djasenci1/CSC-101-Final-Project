@@ -185,7 +185,7 @@ def final_verdict(surveyed_data):
    return the_verdict
 
 def ways_to_improve():
-    return " 1. Unplug devices when not in use (chargers, speakers, etc.).\n 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
+    return " 1. Unplug devices when not in use (chargers, speakers, etc.).\n 2. Use a power strip and switch it off at night, super convenient for shutting everything down at once. \n 3. Avoid leaving laptops plugged in at 100%; charge to 80% to 90%, then unplug."
 
 # This function summarizes the survey results and returns a string value with all the information we've gathered
 def summary(surveyed_data,result_message):

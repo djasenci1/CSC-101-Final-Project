@@ -502,14 +502,14 @@ class TestCases(unittest.TestCase):
     def test_ways_to_improve_1(self):
         result=function.ways_to_improve()
         expected=(" 1. Unplug devices when not in use (chargers, speakers, etc.).\n"
-       " 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n"
-       " 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug.")
+       " 2. Use a power strip and switch it off at night, super convenient for shutting everything down at once. \n"
+       " 3. Avoid leaving laptops plugged in at 100%; charge to 80% to 90%, then unplug.")
         self.assertEqual(expected,result)
     def test_ways_to_improve_2(self):
         result=function.ways_to_improve()
         expected=(" 1. Unplug devices when not in use (chargers, speakers, etc.).\n"
-       " 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n"
-       " 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug.")
+       " 2. Use a power strip and switch it off at night, super convenient for shutting everything down at once. \n"
+       " 3. Avoid leaving laptops plugged in at 100%; charge to 80% to 90%, then unplug.")
         self.assertEqual(expected,result)
 
     def test_summary_1(self):
@@ -526,8 +526,8 @@ class TestCases(unittest.TestCase):
        "\n"
        "Some tips for saving power include: \n"
        " 1. Unplug devices when not in use (chargers, speakers, etc.).\n"
-       " 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n"
-       " 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
+       " 2. Use a power strip and switch it off at night, super convenient for shutting everything down at once. \n"
+       " 3. Avoid leaving laptops plugged in at 100%; charge to 80% to 90%, then unplug."
        )
 
        self.assertEqual(expected,result)
@@ -545,8 +545,8 @@ class TestCases(unittest.TestCase):
        "\n"
        "Some tips for saving power include: \n"
        " 1. Unplug devices when not in use (chargers, speakers, etc.).\n"
-       " 2. Use a power strip and switch it off at night—super convenient for shutting everything down at once. \n"
-       " 3. Avoid leaving laptops plugged in at 100%; charge to ~80–90%, then unplug."
+       " 2. Use a power strip and switch it off at night, super convenient for shutting everything down at once. \n"
+       " 3. Avoid leaving laptops plugged in at 100%; charge to 80% to 90%, then unplug."
        )
 
        self.assertEqual(expected,result)
