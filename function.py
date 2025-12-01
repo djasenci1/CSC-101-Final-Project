@@ -1,4 +1,10 @@
 import main
+#Problem Statement:  Energy consumption from college students is often overlooked, but the dorm’s electricity is a significant part
+# of the campus’s power demand. The purpose of this project is to bring awareness on the large amount of electricity we are using within
+# our dorms, motivating us to find ways to cut down on such usage.
+
+
+
 
 #This function filters out the lowest wattage hour for the four different devices (phone, laptop, ipad, airpod)
 def lowest_wattage_hour_filter(surveyed_data):
@@ -210,6 +216,9 @@ def summary(surveyed_data,result_message):
            "However, " + str(verdict_list) + " need(s) to cut down on their electricity usage" +"\n"
            "\nSome tips for saving power include: "+ "\n"+improvement
    )
+
+#Reflection on the social responsibility aspect of your project:
+#Through this project we were able to learn a lot about approximately how much electricity freshmen have used and approximately how much money that amount of electricity equates to. We hope our project shows how students can improve their electricity usage by being more aware of how much money they are spending from electricity.
 
 
 
