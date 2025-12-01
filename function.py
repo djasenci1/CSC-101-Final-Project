@@ -4,6 +4,11 @@ import main
 # of the campus’s power demand. The purpose of this project is to bring awareness on the large amount of electricity we are using within
 # our dorms, motivating us to find ways to cut down on such usage.
 
+#Explanation of how OOP and data handling are implemented:
+#Created a class called Person
+#Used the data handling through the various functions that were created
+#The surveyed list, which was taken from the dormates of our floor, uses the Person Class in order to fill out the necessary information
+
 
 
 
