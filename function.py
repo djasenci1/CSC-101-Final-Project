@@ -226,7 +226,8 @@ def summary(surveyed_data,result_message):
 #Reflection on the social responsibility aspect of your project:
 #Through this project we were able to learn a lot about approximately how much electricity freshmen have used and
 # approximately how much money that amount of electricity equates to. We hope our project shows how students can improve
-# their electricity usage by being more aware of how much money they are spending from electricity.
+# their electricity usage by being more aware of how much money they are spending from electricity and ultimately, ways to cut down on
+# such uses
 
 
 

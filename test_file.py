@@ -208,6 +208,9 @@ surveyed_data=[
            0
        )
 ]
+
+
+
 reduced_surveyed_data=[
 main.Person(
     "Adrian",
