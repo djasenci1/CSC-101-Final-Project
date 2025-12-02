@@ -1,8 +1,7 @@
 import unittest
 import function
 import main
-
-
+from function import total_wattage_used
 
 surveyed_data=[
        main.Person(
@@ -480,7 +479,18 @@ class TestCases(unittest.TestCase):
  'This Person has used minimal amount of electricity which is good as it can '
  'save electricity bills']
        self.assertEqual(expected,result)
-
+    def test_verdict_1(self):
+        total_wattage=function.total_wattage_used(surveyed_data)
+        the_results=function.the_results(total_wattage,results)
+        result=function.verdict(surveyed_data,the_results)
+        expected=['Adrian', 'Chris', 'Diana']
+        self.assertEqual(expected,result)
+    def test_verdict_2(self):
+        total_wattage=function.total_wattage_used(reduced_surveyed_data)
+        the_results=function.the_results(total_wattage,results)
+        result=function.verdict(surveyed_data,the_results)
+        expected=['Adrian', 'Ramses', 'Bella']
+        self.assertEqual(expected,result)
 
     def test_prediction_1(self):
         result=function.prediction(surveyed_data)
