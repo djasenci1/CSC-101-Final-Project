@@ -166,10 +166,10 @@ def the_results(total_wattage_used, result_messages):
     return the_result
 
 #This function identifies the individuals who are using more electricity than needed
-def verdict(surveyed_data,the_result):
+def verdict(surveyed_data,the_results):
     verdict_list=[]
-    for i in range(len(the_result)):
-        if the_result[i]=='This Person has used high amount of electricity, which is not good in saving electricity bills':
+    for i in range(len(the_results)):
+        if the_results[i]=='This Person has used high amount of electricity, which is not good in saving electricity bills':
             verdict_list.append(surveyed_data[i].name)
     return verdict_list
 
