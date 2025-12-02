@@ -117,7 +117,6 @@ def total_wattage_used(surveyed_data):
     total_wattage = 0
     wattage_list = []
 
-
     for i in range(len(surveyed_data)):
         phone_charging_time = conversion_to_hour(surveyed_data[i].average_phone_charging_time) * surveyed_data[i].average_phone_charging_frequency
         laptop_charging_time=conversion_to_hour(surveyed_data[i].average_laptop_charging_time) * surveyed_data[i].average_laptop_charging_frequency
